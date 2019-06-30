@@ -4,3 +4,18 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
+
+plugins {
+    // Apply the java plugin to add support for Java
+    java
+}
+
+repositories {
+    // Use jcenter for resolving you dependencies.
+    jcenter()
+}
+
+dependencies {
+    // Use JUnit test framework
+    testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
+}
