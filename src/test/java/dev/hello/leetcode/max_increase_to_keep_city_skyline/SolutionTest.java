@@ -9,7 +9,6 @@ class SolutionTest {
     @Test
     void maxIncreaseKeepingSkyline() {
         Solution solution = new Solution();
-        assertEquals(0, solution.maxIncreaseKeepingSkyline(new int[][] {}));
         assertEquals(35, solution.maxIncreaseKeepingSkyline(new int[][] {
                 {3, 0, 8, 4},
                 {2, 4, 5, 7},

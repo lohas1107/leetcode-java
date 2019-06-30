@@ -2,8 +2,6 @@ package dev.hello.leetcode.max_increase_to_keep_city_skyline;
 
 class Solution {
     public int maxIncreaseKeepingSkyline(int[][] grid) {
-        if (grid.length == 0) return 0;
-
         int[] rowSkyline = new int[grid.length];
         int[] columnSkyline = new int[grid[0].length];
 
@@ -11,18 +9,14 @@ class Solution {
 
         for (int i = 0; i < rowSkyline.length; i++) {
             for (int j = 0; j < columnSkyline.length; j++) {
-                if (grid[i][j] > rowSkyline[i]) rowSkyline[i] = grid[i][j];
-                if (grid[i][j] > columnSkyline[j]) columnSkyline[j] = grid[i][j];
+                rowSkyline[i] = Math.max(rowSkyline[i], grid[i][j]);
+                columnSkyline[j] = Math.max(columnSkyline[j], grid[i][j]);
             }
         }
 
         for (int i = 0; i < rowSkyline.length; i++) {
             for (int j = 0; j < columnSkyline.length; j++) {
-                if (rowSkyline[i] <= columnSkyline[j]) {
-                    maxIncrease += (rowSkyline[i] - grid[i][j]);
-                } else {
-                    maxIncrease += (columnSkyline[j] - grid[i][j]);
-                }
+                maxIncrease += Math.min(rowSkyline[i], columnSkyline[j]) - grid[i][j];
             }
         }
 
