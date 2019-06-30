@@ -25,7 +25,7 @@ dependencies {
 
 jacoco {
     toolVersion = "0.8.4"
-    reportsDir = file("$buildDir/reports/jacoco")
+    reportsDir = file("$buildDir/reports/jacoco") // gradle default path
 }
 
 tasks.test {
