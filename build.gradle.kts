@@ -8,6 +8,9 @@
 plugins {
     // Apply the java plugin to add support for Java
     java
+
+    // Provide code coverage metrics
+    jacoco
 }
 
 repositories {
@@ -18,4 +21,21 @@ repositories {
 dependencies {
     // Use JUnit test framework
     testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
+}
+
+jacoco {
+    toolVersion = "0.8.4"
+    reportsDir = file("$buildDir/reports/jacoco")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.isEnabled = false
+        csv.isEnabled = false
+        html.destination = file("$buildDir/jacocoHtml")
+    }
 }
