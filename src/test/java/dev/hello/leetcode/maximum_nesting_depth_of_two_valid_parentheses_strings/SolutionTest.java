@@ -11,7 +11,7 @@ class SolutionTest {
     @Test
     void maxDepthAfterSplit() {
         Solution solution = new Solution();
-        assertEquals("[1, 0, 0, 0, 0, 1]", Arrays.toString(solution.maxDepthAfterSplit("(()())")));
-        assertEquals("[1, 1, 1, 0, 0, 1, 1, 1]", Arrays.toString(solution.maxDepthAfterSplit("()(())()")));
+        assertEquals("[0, 1, 1, 1, 1, 0]", Arrays.toString(solution.maxDepthAfterSplit("(()())")));
+        assertEquals("[0, 0, 0, 1, 1, 0, 0, 0]", Arrays.toString(solution.maxDepthAfterSplit("()(())()")));
     }
 }
